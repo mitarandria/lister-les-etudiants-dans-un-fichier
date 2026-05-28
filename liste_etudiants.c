@@ -49,7 +49,7 @@ void afficher()
   FILE *list;
   
   int pers;
-  pers = 1;
+  pers = 0;
   list = fopen("list", "r");
   if (!list) 
   {
@@ -61,7 +61,7 @@ void afficher()
   printf("--------------------------------------------------------------------------------\n");
   while (fread(&l, sizeof(struct liste), 1, list) == 1)
   {
-      printf("%d) %-s ~ %-s ~ %-s ~ %-s ~ %-s\n",pers,l.nom, l.prenom, l.date_de_naissance, l.niveau, l.adresse);
+      printf("-- %-s ~ %-s ~ %-s ~ %-s ~ %-s\n",pers,l.nom, l.prenom, l.date_de_naissance, l.niveau, l.adresse);
       pers++;
   }
 
